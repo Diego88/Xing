@@ -1,12 +1,12 @@
 package com.hiberus.mobile.android.remote
 
 import com.hiberus.mobile.android.commontest.CommonTestDataFactory
-import com.hiberus.mobile.android.data.datasource.repositories.RepositoriesRemoteDataSource
 import com.hiberus.mobile.android.model.error.AsyncError
 import com.hiberus.mobile.android.model.error.AsyncException
 import com.hiberus.mobile.android.remote.factory.RemoteTestDataFactory
 import com.hiberus.mobile.android.remote.repositories.RepositoriesRemoteDataSourceImpl
 import com.hiberus.mobile.android.remote.repositories.RepositoriesService
+import com.hiberus.mobile.android.repository.datasource.repositories.RepositoriesRemoteDataSource
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.doThrow
 import com.nhaarman.mockitokotlin2.mock

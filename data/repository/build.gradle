@@ -7,7 +7,6 @@ dependencies {
 
     implementation project(Modules.domain)
     implementation project(Modules.model)
-    implementation project(Modules.dataSource)
 
     implementation Dependencies.Koin.koinCore
 
