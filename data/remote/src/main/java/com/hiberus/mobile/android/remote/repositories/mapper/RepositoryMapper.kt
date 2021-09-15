@@ -13,8 +13,9 @@ private fun RepositoryResponse.mapFromRemote() =
         name,
         description,
         fork,
+        fullName,
         htmlUrl,
-        ownerResponse.mapFromRemote(),
+        owner.mapFromRemote(),
         private
     )
 
@@ -22,5 +23,6 @@ private fun OwnerResponse.mapFromRemote() =
     Owner(
         id,
         avatarUrl,
-        htmlUrl
+        htmlUrl,
+        login
     )

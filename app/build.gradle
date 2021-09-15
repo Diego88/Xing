@@ -66,6 +66,7 @@ dependencies {
     implementation project(Modules.dataSource)
     implementation project(Modules.dataRepository)
     implementation project(Modules.domain)
+    implementation project(Modules.commonTest)
 
     // Android Tools
     implementation Dependencies.AndroidTools.desugaring

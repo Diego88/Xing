@@ -33,7 +33,7 @@ object Versions {
         const val mockitoAndroid = "3.8.0"
         const val archCore = "2.1.0"
         const val mockWebServer = "4.7.2"
-        const val robolectric = "4.3"
+        const val robolectric = "4.4"
     }
 
     object AndroidTest {

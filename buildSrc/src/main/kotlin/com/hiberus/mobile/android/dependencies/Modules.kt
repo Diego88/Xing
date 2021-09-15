@@ -9,4 +9,5 @@ object Modules {
     const val dataRepository = ":data:repository"
     const val model = ":model"
     const val domain = ":domain"
+    const val commonTest = ":commonTest"
 }

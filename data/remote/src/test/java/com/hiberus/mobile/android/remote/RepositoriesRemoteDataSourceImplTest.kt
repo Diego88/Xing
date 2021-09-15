@@ -1,9 +1,10 @@
 package com.hiberus.mobile.android.remote
 
+import com.hiberus.mobile.android.commontest.CommonTestDataFactory
 import com.hiberus.mobile.android.data.datasource.repositories.RepositoriesRemoteDataSource
 import com.hiberus.mobile.android.model.error.AsyncError
 import com.hiberus.mobile.android.model.error.AsyncException
-import com.hiberus.mobile.android.remote.factory.DataFactory
+import com.hiberus.mobile.android.remote.factory.RemoteTestDataFactory
 import com.hiberus.mobile.android.remote.repositories.RepositoriesRemoteDataSourceImpl
 import com.hiberus.mobile.android.remote.repositories.RepositoriesService
 import com.nhaarman.mockitokotlin2.doReturn
@@ -48,10 +49,10 @@ class RepositoriesRemoteDataSourceImplTest {
     @Test
     fun `should return response when request has been successful`() = runBlockingTest {
         whenever(repositoriesService.getRespositories(1, 5)) doReturn
-                DataFactory.makeRepositoriesResponse(5)
+                RemoteTestDataFactory.makeRepositoriesResponse(5)
 
         val actualRepos = repositoriesRemoteDataSource.getRepositories(1, 5)
-        val expectedRepos = DataFactory.makeRepositories(5)
+        val expectedRepos = CommonTestDataFactory.makeRepositories(5)
 
         verify(repositoriesService).getRespositories(1, 5)
         assertEquals(expectedRepos, actualRepos)

@@ -1,10 +1,10 @@
 package com.hiberus.mobile.android.remote
 
+import com.hiberus.mobile.android.commontest.utils.readResourceFile
 import com.hiberus.mobile.android.data.datasource.repositories.RepositoriesRemoteDataSource
 import com.hiberus.mobile.android.model.error.AsyncError
 import com.hiberus.mobile.android.model.error.AsyncException
 import com.hiberus.mobile.android.remote.repositories.di.remoteModule
-import com.hiberus.mobile.android.remote.utils.readResourceFile
 import java.net.HttpURLConnection
 import kotlinx.coroutines.runBlocking
 import okhttp3.mockwebserver.MockResponse

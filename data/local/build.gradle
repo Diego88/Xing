@@ -11,6 +11,7 @@ dependencies {
 
     implementation project(Modules.dataSource)
     implementation project(Modules.model)
+    implementation project(Modules.commonTest)
 
     kapt Dependencies.AndroidX.roomCompiler
     implementation Dependencies.AndroidX.room

@@ -11,6 +11,6 @@ data class RepositoryResponse(
     val fullName: String,
     @SerializedName("html_url")
     val htmlUrl: String,
-    val ownerResponse: OwnerResponse,
+    val owner: OwnerResponse,
     val private: Boolean
 )
