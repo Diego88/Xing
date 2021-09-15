@@ -1,0 +1,6 @@
+import com.hiberus.mobile.android.dependencies.Plugins
+
+apply plugin: Plugins.androidLibrary
+apply from: "$rootDir/base_kotlin_android.gradle"
+apply from: "$rootDir/base_test_android.gradle"
+apply from: "$rootDir/base_test.gradle"

@@ -1,0 +1,2 @@
+apply from: "$rootDir/base_kotlin.gradle"
+apply from: "$rootDir/base_test.gradle"

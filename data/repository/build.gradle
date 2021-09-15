@@ -1,0 +1,15 @@
+import com.hiberus.mobile.android.dependencies.Dependencies
+import com.hiberus.mobile.android.dependencies.Modules
+
+apply from:"$rootDir/configuration_kotlin_module.gradle"
+
+dependencies {
+
+    implementation project(Modules.domain)
+    implementation project(Modules.model)
+    implementation project(Modules.dataSource)
+
+    implementation Dependencies.Koin.koinCore
+
+    implementation Dependencies.Kotlin.coroutineCore
+}

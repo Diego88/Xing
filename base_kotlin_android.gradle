@@ -1,0 +1,40 @@
+import com.hiberus.mobile.android.AppConfig
+import com.hiberus.mobile.android.dependencies.Plugins
+import com.hiberus.mobile.android.dependencies.Dependencies
+
+/**
+ * Configuration for android modules (with kotlin)
+ */
+apply plugin: Plugins.kotlinAndroid
+apply plugin: Plugins.kotlinKapt
+apply plugin: Plugins.kotlinParcelize
+
+android {
+    compileSdkVersion AppConfig.compileSdkVersion
+    defaultConfig {
+        minSdkVersion AppConfig.minSdkVersion
+        targetSdkVersion AppConfig.targetSdkVersion
+        versionCode AppConfig.versionCode
+        versionName AppConfig.versionName
+        testInstrumentationRunner AppConfig.testInstrumentationRunner
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8" // set your Java version here
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+
+    // KOTLIN
+    implementation Dependencies.Kotlin.coroutineAndroid
+    implementation Dependencies.Kotlin.coroutineCore
+    implementation Dependencies.Kotlin.ktxCore
+}

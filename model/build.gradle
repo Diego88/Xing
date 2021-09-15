@@ -1,0 +1,3 @@
+import com.hiberus.mobile.android.dependencies.Plugins
+
+apply plugin: Plugins.kotlin

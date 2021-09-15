@@ -1,0 +1,18 @@
+import com.hiberus.mobile.android.dependencies.Dependencies
+import com.hiberus.mobile.android.dependencies.Modules
+
+apply from:"$rootDir/configuration_android_library_module.gradle"
+
+dependencies {
+
+    implementation project(Modules.dataSource)
+    implementation project(Modules.model)
+
+    implementation Dependencies.Koin.koin
+
+    implementation Dependencies.Retrofit.retrofit
+    implementation Dependencies.Retrofit.gsonConverter
+    implementation Dependencies.OkHttp.okhttp
+    implementation Dependencies.OkHttp.httpLoggingInterceptor
+    implementation Dependencies.DeveloperTools.stetho
+}

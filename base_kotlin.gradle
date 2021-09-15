@@ -1,0 +1,7 @@
+import com.hiberus.mobile.android.dependencies.Plugins
+
+/**
+ * Configuration for pure kotlin modules
+ */
+apply plugin: Plugins.kotlin
+apply plugin: Plugins.kotlinKapt

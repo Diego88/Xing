@@ -1,0 +1,11 @@
+rootProject.name = "Xing"
+include ':app'
+include ':domain'
+include ':data'
+include ':data:datasource'
+include ':data:repository'
+include ':data:local'
+include ':data:remote'
+include ':navigation'
+include ':data:session'
+include ':model'

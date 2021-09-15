@@ -1,0 +1,29 @@
+import com.hiberus.mobile.android.dependencies.Classpaths
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        
+    }
+    dependencies {
+        classpath Classpaths.gradlePlugin
+        classpath Classpaths.firebaseCrashlyticsGradlePlugin
+        classpath Classpaths.kotlinGradlePlugin
+        classpath Classpaths.navigationSafeArgs
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+

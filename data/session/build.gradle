@@ -1,0 +1,12 @@
+import com.hiberus.mobile.android.dependencies.Dependencies
+import com.hiberus.mobile.android.dependencies.Modules
+
+apply from: "$rootDir/configuration_android_library_module.gradle"
+
+dependencies {
+    implementation project(Modules.dataSource)
+
+    implementation Dependencies.AndroidX.crypto
+
+    implementation Dependencies.Koin.koin
+}
