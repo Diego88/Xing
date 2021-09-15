@@ -9,9 +9,13 @@ class RepositoriesRemoteDataSourceImpl(
     private val repositoriesService: RepositoriesService
 ) : RepositoriesRemoteDataSource {
 
-    override suspend fun getRepositories(page: Int, pageSize: Int): List<Repository> {
+    companion object {
+        private const val PAGE_SIZE = 100
+    }
+
+    override suspend fun getRepositories(page: Int): List<Repository> {
         return RemoteErrorManager.wrap {
-            repositoriesService.getRespositories(page, pageSize).mapFromRemote()
+            repositoriesService.getRespositories(page, PAGE_SIZE).mapFromRemote()
         }
     }
 }
