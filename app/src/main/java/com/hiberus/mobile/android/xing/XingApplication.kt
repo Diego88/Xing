@@ -7,6 +7,7 @@ import com.hiberus.mobile.android.local.di.localModule
 import com.hiberus.mobile.android.remote.repositories.di.remoteModule
 import com.hiberus.mobile.android.repository.di.repositoryModule
 import com.hiberus.mobile.android.session.di.sessionModule
+import com.hiberus.mobile.android.xing.di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -19,6 +20,7 @@ class XingApplication: Application() {
             androidContext(this@XingApplication)
             modules(
                 listOf(
+                    appModule,
                     domainModule,
                     repositoryModule,
                     sessionModule,

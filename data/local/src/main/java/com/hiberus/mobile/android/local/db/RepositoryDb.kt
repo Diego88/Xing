@@ -10,7 +10,7 @@ data class RepositoryDb(
     @PrimaryKey
     val id: Long,
     val name: String,
-    val description: String,
+    val description: String?,
     val fork: Boolean,
     val fullName: String,
     val htmlUrl: String,

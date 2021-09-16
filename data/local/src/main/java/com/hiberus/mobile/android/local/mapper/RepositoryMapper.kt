@@ -13,8 +13,8 @@ private fun RepositoryDb.mapFromCached() =
         name,
         description,
         fork,
-        htmlUrl,
         fullName,
+        htmlUrl,
         owner.mapFromCached(),
         isPrivate
     )

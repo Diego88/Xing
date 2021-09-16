@@ -10,8 +10,8 @@ import com.hiberus.mobile.android.local.db.RepositoryDb
 @Dao
 interface RepositoriesDao {
 
-    @Query("SELECT * FROM Repositories")
-    suspend fun getRepositories(): List<RepositoryDb>?
+    @Query("SELECT * FROM Repositories LIMIT :limit OFFSET :offset")
+    suspend fun getRepositories(offset: Int, limit: Int): List<RepositoryDb>?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertRepositories(repositories: List<RepositoryDb>)

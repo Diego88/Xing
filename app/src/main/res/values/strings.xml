@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Xing</string>
+    <string name="retry">Retry</string>
+
+    <!-- Errors -->
+    <string name="connection_error">There is a problem with the Internet connection. Please check your connection via Wi-Fi or mobile data.</string>
+    <string name="server_error">The server is not available. Please try again later.</string>
+    <string name="unknown_error">An error has occurred with the request.</string>
+    <string name="open_url_error">The url you are trying to open is not valid.</string>
+
+    <!-- Dialog -->
+    <string name="open_dialog_title">Select the page of the repository you want to visit</string>
+    <string name="open_dialog_repository_option">Repository</string>
+    <string name="open_dialog_owner_option">Owner</string>
+
+    <!-- Accesibility -->
+    <string name="content_desc_owner_avatar">Owner avatar</string>
+    <string name="content_desc_privacy_icon">Privacy icon</string>
 </resources>

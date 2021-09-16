@@ -17,6 +17,10 @@ class RepositoriesDataRepository(
     private val sessionDataSource: AppSessionDataSource
 ) : RepositoriesRepository {
 
+    companion object {
+        private const val DEFAULT_PAGE_SIZE = 30
+    }
+
     override suspend fun getRepositories(
         page: Int,
         forceRefresh: Boolean
@@ -26,7 +30,7 @@ class RepositoriesDataRepository(
             || !localDataSource.isPageUpdated(page)
         ) {
             try {
-                val characters = remoteDataSource.getRepositories(page)
+                val characters = remoteDataSource.getRepositories(page, DEFAULT_PAGE_SIZE)
                 localDataSource.saveRepositories(characters)
                 localDataSource.savePage(page)
                 sessionDataSource.saveLastOpenTime(System.currentTimeMillis())
@@ -37,7 +41,8 @@ class RepositoriesDataRepository(
                 emit(AsyncResult.Error(asyncError, null))
             }
         } else {
-            emit(AsyncResult.Success(localDataSource.getRepositories()))
+            val offset = DEFAULT_PAGE_SIZE * (page - 1)
+            emit(AsyncResult.Success(localDataSource.getRepositories(offset, DEFAULT_PAGE_SIZE)))
         }
     }
 }

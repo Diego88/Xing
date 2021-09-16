@@ -4,7 +4,7 @@ import com.hiberus.mobile.android.model.repositories.Repository
 
 interface RepositoriesLocalDataSource {
 
-    suspend fun getRepositories(): List<Repository>
+    suspend fun getRepositories(offset: Int, limit: Int): List<Repository>
 
     suspend fun saveRepositories(repositories: List<Repository>)
 

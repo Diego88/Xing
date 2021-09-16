@@ -9,8 +9,8 @@ class RepositoriesLocalDataSourceImpl(
     private val repositoriesDao: RepositoriesDao
 ) : RepositoriesLocalDataSource {
 
-    override suspend fun getRepositories(): List<Repository> =
-        repositoriesDao.getRepositories()?.mapFromCached() ?: emptyList()
+    override suspend fun getRepositories(offset: Int, limit: Int): List<Repository> =
+        repositoriesDao.getRepositories(offset, limit)?.mapFromCached() ?: emptyList()
 
     override suspend fun saveRepositories(repositories: List<Repository>) =
         repositoriesDao.insertRepositories(repositories.mapToCached())

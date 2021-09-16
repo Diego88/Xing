@@ -60,14 +60,14 @@ class RepositoriesRemoteDataSourceImplTest {
 
     @Test
     fun `should throw AsyncException when request has not been successful`() = runBlockingTest {
-        whenever(repositoriesService.getRespositories(1, 30)) doThrow HttpException(
+        whenever(repositoriesService.getRespositories(1, 5)) doThrow HttpException(
             Response.error<Unit>(HttpURLConnection.HTTP_INTERNAL_ERROR, "".toResponseBody(null))
         )
 
         try {
-            repositoriesRemoteDataSource.getRepositories(1, 30)
+            repositoriesRemoteDataSource.getRepositories(1, 5)
         } catch (e: AsyncException) {
-            verify(repositoriesService).getRespositories(1, 30)
+            verify(repositoriesService).getRespositories(1, 5)
             val asyncError = AsyncError.ServerError(
                 code = 500,
                 debugMessage = "http://localhost/"
