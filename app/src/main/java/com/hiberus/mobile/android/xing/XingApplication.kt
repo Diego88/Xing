@@ -7,6 +7,7 @@ import com.hiberus.mobile.android.local.di.localModule
 import com.hiberus.mobile.android.remote.repositories.di.remoteModule
 import com.hiberus.mobile.android.repository.di.repositoryModule
 import com.hiberus.mobile.android.session.di.sessionModule
+import com.hiberus.mobile.android.xing.common.log.TimberLogImpl
 import com.hiberus.mobile.android.xing.di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -29,6 +30,9 @@ class XingApplication: Application() {
                 )
             )
         }
+
+        // Initialize logging library
+        TimberLogImpl.init()
 
         // Initialize Stetho
         Stetho.initializeWithDefaults(this)
