@@ -38,10 +38,10 @@ object Versions {
 
     object AndroidTest {
         const val core = "1.1.0"
-        const val androidjunit = "1.1.3"
+        const val androidJunit = "1.1.3"
         const val espressoCore = "3.3.0"
         const val runner = "1.2.0"
-        const val rule = "1.2.0"
+        const val rules = "1.4.0"
         const val testCoreKtx = "1.1.0"
         const val coreTesting = "2.1.0"
         const val fragmentTesting = "1.3.5"

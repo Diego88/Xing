@@ -1,7 +1,6 @@
 package com.hiberus.mobile.android.session.appsession
 
 import com.hiberus.mobile.android.repository.datasource.appsession.AppSessionDataSource
-import com.hiberus.mobile.android.session.SessionData
 
 class AppSessionDataSourceImpl(
     private val sessionData: SessionData

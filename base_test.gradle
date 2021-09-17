@@ -8,9 +8,8 @@ dependencies {
     testImplementation Dependencies.Test.junit
     testImplementation Dependencies.Test.mockitoKotlin
     testImplementation Dependencies.Test.coroutinesTest
-    testImplementation Dependencies.Test.archCoreTest
     testImplementation Dependencies.Test.mockWebServer
     testImplementation Dependencies.Test.koinTest
-    testImplementation Dependencies.AndroidTest.androidjunit
-    testImplementation Dependencies.AndroidTest.androidjunitKtx
+    testImplementation Dependencies.AndroidTest.androidJunit
+    testImplementation Dependencies.AndroidTest.androidJunitKtx
 }

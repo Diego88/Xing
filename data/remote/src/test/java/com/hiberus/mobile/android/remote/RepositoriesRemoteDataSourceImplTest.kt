@@ -4,6 +4,8 @@ import com.hiberus.mobile.android.commontest.CommonTestDataFactory
 import com.hiberus.mobile.android.model.error.AsyncError
 import com.hiberus.mobile.android.model.error.AsyncException
 import com.hiberus.mobile.android.remote.factory.RemoteTestDataFactory
+import com.hiberus.mobile.android.remote.factory.RemoteTestDataFactory.DEFAULT_PAGE
+import com.hiberus.mobile.android.remote.factory.RemoteTestDataFactory.DEFAULT_PAGE_SIZE
 import com.hiberus.mobile.android.remote.repositories.RepositoriesRemoteDataSourceImpl
 import com.hiberus.mobile.android.remote.repositories.RepositoriesService
 import com.hiberus.mobile.android.repository.datasource.repositories.RepositoriesRemoteDataSource
@@ -48,26 +50,30 @@ class RepositoriesRemoteDataSourceImplTest {
 
     @Test
     fun `should return response when request has been successful`() = runBlockingTest {
-        whenever(repositoriesService.getRespositories(1, 5)) doReturn
+        whenever(repositoriesService.getRespositories(DEFAULT_PAGE, DEFAULT_PAGE_SIZE)) doReturn
                 RemoteTestDataFactory.makeRepositoriesResponse(5)
 
-        val actualRepos = repositoriesRemoteDataSource.getRepositories(1, 5)
+        val actualRepos =
+            repositoriesRemoteDataSource.getRepositories(DEFAULT_PAGE, DEFAULT_PAGE_SIZE)
         val expectedRepos = CommonTestDataFactory.makeRepositories(5)
 
-        verify(repositoriesService).getRespositories(1, 5)
+        verify(repositoriesService).getRespositories(DEFAULT_PAGE, DEFAULT_PAGE_SIZE)
         assertEquals(expectedRepos, actualRepos)
     }
 
     @Test
     fun `should throw AsyncException when request has not been successful`() = runBlockingTest {
-        whenever(repositoriesService.getRespositories(1, 5)) doThrow HttpException(
-            Response.error<Unit>(HttpURLConnection.HTTP_INTERNAL_ERROR, "".toResponseBody(null))
+        whenever(
+            repositoriesService.getRespositories(DEFAULT_PAGE, DEFAULT_PAGE_SIZE)
+        ) doThrow HttpException(
+            Response.error<Unit>(HttpURLConnection.HTTP_INTERNAL_ERROR, ""
+                .toResponseBody(null))
         )
 
         try {
-            repositoriesRemoteDataSource.getRepositories(1, 5)
+            repositoriesRemoteDataSource.getRepositories(DEFAULT_PAGE, DEFAULT_PAGE_SIZE)
         } catch (e: AsyncException) {
-            verify(repositoriesService).getRespositories(1, 5)
+            verify(repositoriesService).getRespositories(DEFAULT_PAGE, DEFAULT_PAGE_SIZE)
             val asyncError = AsyncError.ServerError(
                 code = 500,
                 debugMessage = "http://localhost/"

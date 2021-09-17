@@ -6,8 +6,8 @@ apply from: "$rootDir/configuration_kotlin_module.gradle"
 dependencies {
 
     implementation project(Modules.model)
+    testImplementation project(Modules.commonTest)
 
     implementation Dependencies.Koin.koinCore
-
     implementation Dependencies.Kotlin.coroutineCore
 }

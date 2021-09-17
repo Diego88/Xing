@@ -5,6 +5,8 @@ import com.hiberus.mobile.android.remote.repositories.response.RepositoryRespons
 
 object RemoteTestDataFactory {
 
+    const val DEFAULT_PAGE = 1
+    const val DEFAULT_PAGE_SIZE = 5
     private const val EMPTY_STRING = ""
 
     internal fun makeRepositoriesResponse(count: Int): List<RepositoryResponse> {

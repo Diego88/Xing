@@ -8,10 +8,10 @@ object CommonTestDataFactory {
     private const val EMPTY_STRING = ""
     private const val DEFAULT_ID = 0L
 
-    fun makeRepositories(count: Int): List<Repository> {
+    fun makeRepositories(count: Int, id: Long = DEFAULT_ID): List<Repository> {
         val repositories = mutableListOf<Repository>()
         repeat(count) {
-            repositories.add(makeRepository())
+            repositories.add(makeRepository(id))
         }
 
         return repositories
