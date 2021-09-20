@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+
+    <dimen name="padding_normal">16dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_large">18dp</dimen>
+    <dimen name="margin_extra">24dp</dimen>
+
+    <dimen name="progress_bar_size">50dp</dimen>
+    <dimen name="owner_avatar_size">100dp</dimen>
+    <dimen name="icon_size">24dp</dimen>
+</resources>

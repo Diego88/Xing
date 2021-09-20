@@ -63,9 +63,9 @@ dependencies {
     implementation project(Modules.dataLocal)
     implementation project(Modules.dataRemote)
     implementation project(Modules.dataSession)
-    implementation project(Modules.dataSource)
     implementation project(Modules.dataRepository)
     implementation project(Modules.domain)
+    androidTestImplementation project(Modules.commonTest)
 
     // Android Tools
     implementation Dependencies.AndroidTools.desugaring
@@ -80,6 +80,7 @@ dependencies {
     implementation Dependencies.AndroidX.material
     implementation Dependencies.AndroidX.navigation
     implementation Dependencies.AndroidX.navigationFragment
+    implementation Dependencies.AndroidX.support
 
     // Lifecycle
     implementation Dependencies.AndroidX.lifecycleViewModel
@@ -93,21 +94,57 @@ dependencies {
     // Glide
     implementation Dependencies.Glide.glide
 
-    // Test
-    implementation Dependencies.AndroidX.support
-    androidTestImplementation Dependencies.Test.koinCore
-    androidTestImplementation Dependencies.Test.mockitoKotlin
-    androidTestImplementation Dependencies.Test.mockitoAndroid
-    androidTestImplementation Dependencies.AndroidTest.testCoreKtx
-    androidTestImplementation Dependencies.AndroidTest.rule
+    // Unit Test
+    testImplementation Dependencies.Test.koinTestJunit
+    testImplementation Dependencies.Test.mockitoKotlin
+    testImplementation Dependencies.Test.mockitoInline
+
+    // Instrumentation Test
+    debugImplementation Dependencies.AndroidTest.fragmentTesting
     androidTestImplementation Dependencies.Test.junit
     androidTestImplementation Dependencies.Test.coroutinesTest
+    androidTestImplementation Dependencies.AndroidTest.archCoreTest
+    androidTestImplementation Dependencies.AndroidTest.core
+    androidTestImplementation Dependencies.AndroidTest.testCoreKtx
+    androidTestImplementation(Dependencies.Test.koinTest) {
+        exclude group: 'org.jetbrains.kotlin'
+        exclude group: 'org.mockito'
+    }
+    androidTestImplementation(Dependencies.Test.mockitoKotlin) {
+        exclude group: 'org.jetbrains.kotlin'
+        exclude group: 'org.mockito'
+    }
+    androidTestImplementation Dependencies.Test.mockitoAndroid
+    androidTestImplementation Dependencies.AndroidTest.androidJunit
+    androidTestImplementation Dependencies.AndroidTest.androidJunitKtx
     androidTestImplementation Dependencies.AndroidTest.espressoCore
+    androidTestImplementation Dependencies.AndroidTest.espressoIntents
     androidTestImplementation Dependencies.AndroidTest.espressoContrib
-    androidTestImplementation Dependencies.AndroidTest.coreTesting
-    androidTestImplementation Dependencies.AndroidTest.fragmentTesting
-
-    debugImplementation Dependencies.AndroidTest.fragmentTesting
+    androidTestImplementation Dependencies.AndroidTest.runner
+    androidTestImplementation Dependencies.AndroidTest.rules
+    androidTestImplementation(Dependencies.AndroidTest.espressoCore) {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestImplementation(Dependencies.AndroidTest.espressoIntents) {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    // Exclude Material Design related libraries
+    androidTestImplementation(Dependencies.AndroidTest.espressoContrib) {
+        exclude module: 'appcompat'
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-v4'
+        exclude module: 'support-v13'
+        exclude module: 'support-annotations'
+        exclude module: 'recyclerview-v7'
+        exclude module: 'design'
+        exclude module: 'material'
+    }
+    androidTestImplementation(Dependencies.AndroidTest.runner) {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestImplementation(Dependencies.AndroidTest.rules) {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
 
     // Google
     implementation Dependencies.Firebase.firebaseCrashlytics

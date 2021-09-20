@@ -1,0 +1,7 @@
+import com.hiberus.mobile.android.dependencies.Modules
+
+apply from: "$rootDir/base_kotlin.gradle"
+
+dependencies {
+    implementation project(Modules.model)
+}

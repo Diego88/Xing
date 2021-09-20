@@ -11,7 +11,6 @@ class Dependencies {
         const val mockitoInline = "org.mockito:mockito-inline:${Versions.Test.mockitoInline}"
         const val mockitoAndroid = "org.mockito:mockito-android:${Versions.Test.mockitoAndroid}"
         const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.Kotlin.coroutines}"
-        const val archCoreTest = "androidx.arch.core:core-testing:${Versions.Test.archCore}"
         const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Versions.Test.mockWebServer}"
         const val robolectric = "org.robolectric:robolectric:${Versions.Test.robolectric}"
         const val koinTest = "io.insert-koin:koin-test:${Versions.Koin.koin}"
@@ -21,16 +20,17 @@ class Dependencies {
 
     object AndroidTest {
         const val core = "androidx.test:core:${Versions.AndroidTest.core}"
-        const val androidjunit = "androidx.test.ext:junit:${Versions.AndroidTest.androidjunit}"
-        const val androidjunitKtx = "androidx.test.ext:junit-ktx:${Versions.AndroidTest.androidjunit}"
+        const val testCoreKtx = "androidx.test:core-ktx:${Versions.AndroidTest.testCoreKtx}"
+        const val androidJunit = "androidx.test.ext:junit:${Versions.AndroidTest.androidJunit}"
+        const val androidJunitKtx = "androidx.test.ext:junit-ktx:${Versions.AndroidTest.androidJunit}"
         const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.AndroidTest.espressoCore}"
         const val espressoContrib = "androidx.test.espresso:espresso-contrib:${Versions.AndroidTest.espressoCore}"
+        const val espressoIntents = "androidx.test.espresso:espresso-intents:${Versions.AndroidTest.espressoCore}"
         const val roomTest = "androidx.room:room-testing:${Versions.AndroidX.room}"
         const val runner = "androidx.test:runner:${Versions.AndroidTest.runner}"
-        const val rule = "androidx.test:rules:${Versions.AndroidTest.rule}"
-        const val testCoreKtx = "androidx.test:core-ktx:${Versions.AndroidTest.testCoreKtx}"
+        const val rules = "androidx.test:rules:${Versions.AndroidTest.rules}"
         const val fragmentTesting = "androidx.fragment:fragment-testing:${Versions.AndroidTest.fragmentTesting}"
-        const val coreTesting = "androidx.arch.core:core-testing:${Versions.AndroidTest.coreTesting}"
+        const val archCoreTest = "androidx.arch.core:core-testing:${Versions.AndroidTest.coreTesting}"
     }
 
     object AndroidX {

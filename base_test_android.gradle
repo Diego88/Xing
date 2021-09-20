@@ -9,11 +9,11 @@ dependencies {
     androidTestImplementation Dependencies.AndroidTest.espressoCore
     androidTestImplementation Dependencies.AndroidTest.espressoContrib
     androidTestImplementation Dependencies.AndroidTest.runner
-    androidTestImplementation Dependencies.AndroidTest.rule
+    androidTestImplementation Dependencies.AndroidTest.rules
+    androidTestImplementation Dependencies.AndroidTest.archCoreTest
     // UNIT TESTS
     androidTestImplementation Dependencies.Test.junit
     androidTestImplementation Dependencies.Test.mockk
     androidTestImplementation Dependencies.Test.coroutinesTest
-    androidTestImplementation Dependencies.Test.archCoreTest
     androidTestImplementation Dependencies.Test.robolectric
 }
