@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hiberus.mobile.android.domain.repository.repositories.GetRepositoriesUseCase
-import com.hiberus.mobile.android.model.AsyncResult
 import com.hiberus.mobile.android.model.repositories.Repository
 import com.hiberus.mobile.android.xing.common.model.ResourceState
 import com.hiberus.mobile.android.xing.common.model.ResourceState.Companion.toResourceState
@@ -17,19 +16,14 @@ class RepositoriesListViewModel(
     private val getRepositoryUseCase: GetRepositoriesUseCase
 ) : ViewModel() {
 
-    private var page = 1
-
     private var _repositories = MutableLiveData<ResourceState<List<Repository>>>()
     val repositories: LiveData<ResourceState<List<Repository>>>
         get() = _repositories
 
-    fun fetchRepositories() {
+    fun fetchRepositories(page: Int = 1) {
         _repositories.value = ResourceState.Loading()
         viewModelScope.launch(Dispatchers.Main) {
             getRepositoryUseCase(page).collect { result ->
-                if (result is AsyncResult.Success && result.data?.isNotEmpty() == true) {
-                    page++
-                }
                 _repositories.value = result.toResourceState()
             }
         }

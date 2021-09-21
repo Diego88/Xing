@@ -9,9 +9,9 @@
     <string name="open_url_error">The url you are trying to open is not valid.</string>
 
     <!-- Dialog -->
-    <string name="open_dialog_title">Select the page of the repository you want to visit</string>
-    <string name="open_dialog_repository_option">Repository</string>
-    <string name="open_dialog_owner_option">Owner</string>
+    <string name="open_github_dialog_title">Select the page of the repository you want to visit</string>
+    <string name="open_github_dialog_repository_option">Repository</string>
+    <string name="open_github_dialog_owner_option">Owner</string>
 
     <!-- Accesibility -->
     <string name="content_desc_owner_avatar">Owner avatar</string>
